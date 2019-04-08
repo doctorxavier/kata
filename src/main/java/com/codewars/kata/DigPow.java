@@ -2,7 +2,7 @@ package com.codewars.kata;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import com.santander.api.util.Utilities;
+import com.codewars.kata.util.Utilities;
 
 public final class DigPow {
 
@@ -35,7 +35,7 @@ public final class DigPow {
 		// digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 =
 		// 46288 * 51
 		// DigPow
-		System.out.println(String.format("%d", DigPow.digPow(92, 1)));
+		System.out.println(String.format("%d", DigPow.digPow(Integer.valueOf("92"), 1)));
 
 		watch.stop();
 		System.out.println(Utilities.parseMilliseconds(watch.getTime()));

@@ -1,4 +1,4 @@
-package com.santander.api.util;
+package com.codewars.kata.util;
 
 public final class Utilities {
 

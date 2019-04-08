@@ -2,7 +2,7 @@ package com.codewars.kata;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import com.santander.api.util.Utilities;
+import com.codewars.kata.util.Utilities;
 
 public final class Solution {
 
@@ -10,11 +10,11 @@ public final class Solution {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final StopWatch watch = new StopWatch();
 		watch.start();
 
-		for (int i = 1; i < 30000; i += 1) {
+		for (int i = 1; i < Integer.valueOf("3000"); i += 1) {
 			Solution.zeros(i);
 			// System.out.println(String.format("i: %d, n: %d", i, Solution.zeros(i)));
 		}
@@ -23,7 +23,7 @@ public final class Solution {
 		System.out.println(Utilities.parseMilliseconds(watch.getTime()));
 	}
 
-	public static int zeros(int n) {
+	public static int zeros(final int n) {
 		int totalDivTimes = 0;
 
 		for (int i = 1; i <= n; i += 1) {

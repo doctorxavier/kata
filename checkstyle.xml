@@ -66,15 +66,7 @@
 		<property name="maximum" value="0"/>
 		<property name="message" value="Line has trailing spaces." />
 	</module>
-	<module name="RegexpMultiline">
-		<property name="format" value="System\.(out)|(err)\.print(ln)?\(" />
-	</module>
-	<module name="RegexpMultiline">
-		<property name="format" value="\.printStackTrace?\(" />
-	</module>
-	<module name="RegexpMultiline">
-		<property name="format" value="System\.exit?\(" />
-	</module>
+	<module name="RegexpMultiline"/>
 
     <!-- Checks for Headers                                -->
     <!-- See http://checkstyle.sf.net/config_header.html   -->

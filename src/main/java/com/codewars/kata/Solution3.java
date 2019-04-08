@@ -1,11 +1,8 @@
 package com.codewars.kata;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.commons.lang3.time.StopWatch;
 
-import com.santander.api.util.Utilities;
+import com.codewars.kata.util.Utilities;
 
 public final class Solution3 {
 
@@ -13,11 +10,11 @@ public final class Solution3 {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final StopWatch watch = new StopWatch();
 		watch.start();
 
-		for (int i = 1; i < 300000; i += 1) {
+		for (int i = 1; i < Integer.valueOf("300000"); i += 1) {
 			Solution3.zeros(i);
 			// System.out.println(String.format("i: %d, n: %d", i, Solution3.zeros(i)));
 		}
@@ -26,7 +23,8 @@ public final class Solution3 {
 		System.out.println(Utilities.parseMilliseconds(watch.getTime()));
 	}
 
-	public static int zeros(int n) {
+	public static int zeros(final int m) {
+		int n = m;
 		int totalDivTimes = 0;
 		int pow1 = 0;
 		int pow2 = 0;

@@ -1,4 +1,4 @@
-package com.santander.api.util.parser.json;
+package com.codewars.kata.util.parser.json;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,12 +10,12 @@ import java.nio.charset.StandardCharsets;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
+import com.codewars.kata.util.parser.Parser;
+import com.codewars.kata.util.parser.exception.ParserException;
+import com.codewars.kata.util.parser.gson.DateTimeConverter;
+import com.codewars.kata.util.parser.gson.LocalDateConverter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.santander.api.util.parser.Parser;
-import com.santander.api.util.parser.exception.ParserException;
-import com.santander.api.util.parser.gson.DateTimeConverter;
-import com.santander.api.util.parser.gson.LocalDateConverter;
 
 public final class JsonParser<E> implements Parser<E> {
 

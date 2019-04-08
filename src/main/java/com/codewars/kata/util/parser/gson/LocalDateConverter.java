@@ -1,4 +1,4 @@
-package com.santander.api.util.parser.gson;
+package com.codewars.kata.util.parser.gson;
 
 import java.lang.reflect.Type;
 import java.util.Date;

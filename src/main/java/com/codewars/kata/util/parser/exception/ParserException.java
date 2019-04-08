@@ -1,4 +1,4 @@
-package com.santander.api.util.parser.exception;
+package com.codewars.kata.util.parser.exception;
 
 public class ParserException extends RuntimeException {
 

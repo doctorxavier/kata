@@ -1,4 +1,4 @@
-package com.santander.api.util.io;
+package com.codewars.kata.util.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

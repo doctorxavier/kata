@@ -1,9 +1,9 @@
-package com.santander.api.util.parser;
+package com.codewars.kata.util.parser;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.santander.api.util.parser.exception.ParserException;
+import com.codewars.kata.util.parser.exception.ParserException;
 
 public interface Parser<E> {
 

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import com.santander.api.util.Utilities;
+import com.codewars.kata.util.Utilities;
 
 public final class FactDecomp {
 
@@ -16,54 +16,59 @@ public final class FactDecomp {
 		final StopWatch watch = new StopWatch();
 		watch.start();
 
-		System.out.println(FactDecomp.decomp2(4000));
+		System.out.println(FactDecomp.decomp2(Integer.valueOf("4000")));
 
 		watch.stop();
 		System.out.println(Utilities.parseMilliseconds(watch.getTime()));
 	}
 
-	public static String decomp2(int n) {
+	public static String decomp2(final int m) {
+		int n = m;
 		int[] exponentsOfPrimes = new int[n + 1];
 		while (n > 1) {
 			int x = n--;
-			for (int i = 2; i <= Math.sqrt(x); i++)
+			for (int i = 2; i <= Math.sqrt(x); i++) {
 				if (x % i == 0) {
 					x /= i;
 					exponentsOfPrimes[i]++;
 					i = 1;
 				}
+			}
 			exponentsOfPrimes[x]++;
 		}
 		StringBuilder result = new StringBuilder();
 		for (int i = 2; i < exponentsOfPrimes.length; i++) {
-			if (exponentsOfPrimes[i] == 0)
+			if (exponentsOfPrimes[i] == 0) {
 				continue;
-			if (exponentsOfPrimes[i] == 1)
+			}
+			if (exponentsOfPrimes[i] == 1) {
 				result.append(i + " * ");
-			if (exponentsOfPrimes[i] > 1)
+			}
+			if (exponentsOfPrimes[i] > 1) {
 				result.append(i + "^" + exponentsOfPrimes[i] + " * ");
+			}
 		}
 		return result.substring(0, result.length() - 3);
 	}
 
 	public static String decomp(final int n) {
-		String decomp = "";
-
+		final StringBuffer stringBuffer = new StringBuffer();
 		final BigInteger factor = factor(BigInteger.valueOf(n));
 		boolean divisible = true;
 
 		for (int i = 2; i <= n; i++) {
 			if (n == 2 || isPrime(i)) {
-				decomp += String.format("%d", i);
+				stringBuffer.append(String.format("%d", i));
 				int d = divisibleTimes2(n, factor, i);
 				if (d > 1 && divisible) {
-					decomp += String.format("^%d * ", d);
+					stringBuffer.append(String.format("^%d * ", d));
 				} else {
-					decomp += " * ";
+					stringBuffer.append(" * ");
 					divisible = false;
 				}
 			}
 		}
+		String decomp = stringBuffer.toString();
 		if (decomp.length() > 3) {
 			decomp = decomp.substring(0, decomp.length() - 3);
 		}
