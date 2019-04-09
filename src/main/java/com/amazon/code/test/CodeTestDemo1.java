@@ -11,7 +11,7 @@ import com.codewars.kata.util.parser.gson.LocalDateConverter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class CodeTest1 {
+public class CodeTestDemo1 {
 
 	private static final Gson GSON = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").registerTypeAdapter(DateTime.class,
 			new DateTimeConverter()).registerTypeAdapter(LocalDate.class, new LocalDateConverter()).create();
@@ -129,7 +129,7 @@ public class CodeTest1 {
 		int[] array = new int[]
 			{120, 12, 4, 24, 120};
 
-		final CodeTest1 codeTest = new CodeTest1();
+		final CodeTestDemo1 codeTest = new CodeTestDemo1();
 
 		System.out.println(GSON.toJson(array) + "\n");
 

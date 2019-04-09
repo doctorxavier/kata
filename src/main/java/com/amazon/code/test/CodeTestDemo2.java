@@ -9,12 +9,12 @@ import com.codewars.kata.util.parser.gson.LocalDateConverter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public final class CodeTest2 {
+public final class CodeTestDemo2 {
 
 	private static final Gson GSON = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").registerTypeAdapter(DateTime.class,
 			new DateTimeConverter()).registerTypeAdapter(LocalDate.class, new LocalDateConverter()).create();
 
-	private CodeTest2() {
+	private CodeTestDemo2() {
 
 	}
 
