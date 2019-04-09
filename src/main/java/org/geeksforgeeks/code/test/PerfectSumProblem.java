@@ -101,7 +101,7 @@ public final class PerfectSumProblem {
 
 		int pointer = arr[0];
 		int pivot = 1;
-		int matrix[][] = new int[arr.length][arr.length];
+		int[][] matrix = new int[arr.length][arr.length];
 		int index = 0;
 		boolean match = false;
 
