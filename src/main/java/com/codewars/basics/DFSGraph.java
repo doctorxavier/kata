@@ -40,9 +40,9 @@ public final class DFSGraph {
 		System.out.print(v + " ");
 
 		// Recur for all the vertices adjacent to this vertex
-		Iterator<Integer> i = adj[v].listIterator();
+		final Iterator<Integer> i = adj[v].listIterator();
 		while (i.hasNext()) {
-			int n = i.next();
+			final int n = i.next();
 			if (!visited[n]) {
 				dfsUtil(n, visited);
 			}

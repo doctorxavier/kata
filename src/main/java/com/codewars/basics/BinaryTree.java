@@ -12,7 +12,7 @@ package com.codewars.basics;
 
 public final class BinaryTree {
 
-	public class Node {
+	public static final class Node {
 
 		private int		key;
 		private Node	left;
@@ -107,21 +107,8 @@ public final class BinaryTree {
 		/* now recur on right subtree */
 		printPreorder(node.right);
 	}
-
-	// Wrappers over above recursive functions
-	void printPostorder() {
-		printPostorder(root);
-	}
-
-	void printInorder() {
-		printInorder(root);
-	}
-
-	void printPreorder() {
-		printPreorder(root);
-	}
-
-	/* function to print level order traversal of tree */
+	
+		/* function to print level order traversal of tree */
 	public void printLevelOrder() {
 		int h = height(root);
 		int i;
@@ -145,7 +132,7 @@ public final class BinaryTree {
 
 			/* use the larger one */
 			if (lheight > rheight) {
- 				return (lheight + 1);
+				return (lheight + 1);
 			} else {
 				return (rheight + 1);
 			}
@@ -165,14 +152,34 @@ public final class BinaryTree {
 		}
 	}
 
+	// Wrappers over above recursive functions
+	void printPostorder() {
+		printPostorder(root);
+	}
+
+	void printInorder() {
+		printInorder(root);
+	}
+
+	void printPreorder() {
+		printPreorder(root);
+	}
+
 	// Driver method
+	// CHECKSTYLE:OFF
 	public static void main(final String[] args) {
 		final BinaryTree tree = new BinaryTree();
-		tree.root = tree.new Node(1);
-		tree.root.left = tree.new Node(2);
-		tree.root.right = tree.new Node(3);
-		tree.root.left.left = tree.new Node(4);
-		tree.root.left.right = tree.new Node(5);
+		tree.root = new BinaryTree.Node(1);
+		tree.root.left = new BinaryTree.Node(2);
+		tree.root.left.left = new BinaryTree.Node(3);
+		tree.root.left.left.left = new BinaryTree.Node(4);
+		tree.root.left.left.right = new BinaryTree.Node(5);
+		tree.root.left.right = new BinaryTree.Node(6);
+		tree.root.left.right.left = new BinaryTree.Node(7);
+		tree.root.left.right.right = new BinaryTree.Node(8);
+		tree.root.right = new BinaryTree.Node(9);
+		tree.root.right.left = new BinaryTree.Node(10);
+		tree.root.right.right = new BinaryTree.Node(11);
 
 		System.out.println("Preorder traversal of binary tree is ");
 		tree.printPreorder();
@@ -186,5 +193,6 @@ public final class BinaryTree {
 		System.out.println("\nLevel order traversal of binary tree is ");
 		tree.printLevelOrder();
 	}
-	
+	// CHECKSTYLE:ON
+
 }
